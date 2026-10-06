@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixpro Wireless LLC - Digital Software & Mobile Repair Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0055ff',
+                        brandOrange: '#ff8c00',
+                        darkBg: '#080b11',
+                        darkCard: '#101622',
+                        darkBorder: '#1c2638'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080b11;
+            color: #f3f4f6;
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+        }
+        .orange-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
+        }
+        .blue-glow {
+            box-shadow: 0 0 20px rgba(0, 85, 255, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080b11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2638;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff8c00;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 flex flex-col min-h-screen selection:bg-brandOrange selection:text-white">
+
+    <!-- Top Contact Bar -->
+    <div class="bg-slate-950 border-b border-darkBorder py-2.5 text-xs md:text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6">
+                <a href="https://maps.google.com/?q=1058+Coney+Island+ave+Brooklyn+NY+11210" target="_blank" class="hover:text-brandOrange transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-brandOrange"></i>
+                    <span>1058 Coney Island Ave, Brooklyn, NY 11210</span>
+                </a>
+                <a href="mailto:Fixprowirelessllc@gmail.com" class="hover:text-brandOrange transition hidden md:flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-brandBlue"></i>
+                    <span>Fixprowirelessllc@gmail.com</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-5">
+                <a href="tel:10000000000" class="hover:text-brandOrange transition flex items-center gap-1.5 font-medium text-gray-200">
+                    <i class="fa-solid fa-phone text-brandOrange"></i>
+                    <span>(+1----------)</span>
+                </a>
+                <a href="https://instagram.com/fixprowirelessllc" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brandOrange transition flex items-center gap-1.5 font-semibold">
+                    <i class="fa-brands fa-instagram text-base text-brandOrange"></i>
+                    <span>@fixprowirelessllc</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-darkBg/90 backdrop-blur-md border-b border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brandBlue to-brandOrange p-0.5 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved text-brandOrange text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white">FIXPRO<span class="text-brandOrange">.</span></span>
+                        <span class="block text-[10px] uppercase tracking-widest text-gray-400 font-bold -mt-1">Wireless LLC</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#services" class="text-gray-300 hover:text-brandOrange transition">Services</a>
+                    <a href="#estimator" class="text-gray-300 hover:text-brandOrange transition">Cost Estimator</a>
+                    <a href="#why-us" class="text-gray-300 hover:text-brandOrange transition">Why Fixpro</a>
+                    <a href="#faq" class="text-gray-300 hover:text-brandOrange transition">FAQ</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brandOrange transition">Location</a>
+                </nav>
+
+                <!-- Header CTA -->
+                <div class="hidden md:flex items-center">
+                    <button onclick="openBookingModal()" class="bg-gradient-to-r from-brandOrange to-amber-600 hover:from-amber-600 hover:to-brandOrange text-white font-bold px-6 py-2.5 rounded-xl shadow-lg orange-glow transition duration-200">
+                        Book Service
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800 hover:text-brandOrange">Services</a>
+            <a href="#estimator" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800 hover:text-brandOrange">Cost Estimator</a>
+            <a href="#why-us" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800 hover:text-brandOrange">Why Fixpro</a>
+            <a href="#faq" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800 hover:text-brandOrange">FAQ</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800 hover:text-brandOrange">Location & Contact</a>
+            <button onclick="openBookingModal()" class="w-full mt-2 bg-gradient-to-r from-brandOrange to-amber-600 text-white font-bold px-4 py-3 rounded-xl shadow">
+                Book Service Now
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-darkBg via-slate-950 to-darkBg">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.12),transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,140,0,0.08),transparent_50%)]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandOrange/10 border border-brandOrange/30 text-brandOrange text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-microchip"></i> Hardware Repairs & Digital Software Solutions
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                            PREMIUM REPAIR & <br>
+                            <span class="text-gradient">DIGITAL SOLUTIONS</span>
+                        </h1>
+                        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Welcome to <strong class="text-gray-200">Fixpro Wireless LLC</strong>. From precision board-level hardware repair to custom software unlocking, OS optimizations, and high-end smartphone sales in Brooklyn, NY.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <button onclick="openBookingModal()" class="w-full sm:w-auto bg-gradient-to-r from-brandOrange to-amber-600 hover:from-amber-600 hover:to-brandOrange text-white font-bold px-8 py-4 rounded-xl shadow-lg orange-glow transition duration-200 flex items-center justify-center gap-2 text-base">
+                                <i class="fa-solid fa-wrench"></i> Book Repair / Service
+                            </button>
+                            <a href="#estimator" class="w-full sm:w-auto bg-darkCard border border-darkBorder hover:border-brandBlue/60 text-gray-200 font-semibold px-8 py-4 rounded-xl transition duration-200 text-center text-base">
+                                Instant Price Estimator
+                            </a>
+                        </div>
+
+                        <!-- Stats Badge Bar -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 border-t border-darkBorder/60 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-2xl font-black text-white">100<span class="text-brandOrange">%</span></p>
+                                <p class="text-xs text-gray-400 font-medium">Digital & Physical</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-black text-white">30<span class="text-brandBlue">m</span></p>
+                                <p class="text-xs text-gray-400 font-medium">Express Service</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-black text-white">5<span class="text-brandOrange">★</span></p>
+                                <p class="text-xs text-gray-400 font-medium">Customer Service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual / Store Address Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md bg-gradient-to-b from-darkCard to-slate-900 border border-darkBorder rounded-3xl p-8 orange-glow">
+                            <div class="absolute -top-4 -right-4 bg-brandOrange text-white font-black text-xs px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                                Retail & Online
+                            </div>
+                            
+                            <div class="space-y-6 text-center">
+                                <div class="w-20 h-20 bg-brandBlue/10 border border-brandBlue/30 rounded-2xl flex items-center justify-center mx-auto text-brandBlue text-3xl">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Fixpro Wireless Store</h3>
+                                    <p class="text-sm text-brandOrange font-medium mt-1">
+                                        <i class="fa-solid fa-location-dot mr-1"></i> 1058 Coney Island ave Brooklyn NY 11210
+                                    </p>
+                                </div>
+
+                                <div class="bg-darkBg/90 rounded-xl p-4 text-left space-y-2 border border-darkBorder text-xs sm:text-sm">
+                                    <div class="flex justify-between text-gray-300">
+                                        <span class="text-gray-400"><i class="fa-solid fa-clock text-brandOrange mr-2"></i>Mon - Sat:</span>
+                                        <span class="font-semibold">10:00 AM - 7:30 PM</span>
+                                    </div>
+                                    <div class="flex justify-between text-gray-300">
+                                        <span class="text-gray-400"><i class="fa-solid fa-clock text-brandOrange mr-2"></i>Sunday:</span>
+                                        <span class="font-semibold">11:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between text-gray-300 pt-2 border-t border-darkBorder">
+                                        <span class="text-gray-400"><i class="fa-brands fa-instagram text-brandOrange mr-2"></i>Instagram:</span>
+                                        <a href="https://instagram.com/fixprowirelessllc" target="_blank" class="font-bold text-brandOrange hover:underline">@fixprowirelessllc</a>
+                                    </div>
+                                </div>
+
+                                <a href="https://maps.google.com/?q=1058+Coney+Island+ave+Brooklyn+NY+11210" target="_blank" class="block w-full text-center bg-slate-800 hover:bg-slate-700 text-gray-200 text-sm font-semibold py-3.5 rounded-xl transition">
+                                    <i class="fa-solid fa-map-location-dot mr-2 text-brandOrange"></i> Open Store Location
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-darkBg border-t border-darkBorder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase font-bold tracking-widest text-brandOrange mb-2">Comprehensive Solutions</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Hardware & Digital Software Services</p>
+                    <p class="text-gray-400 mt-4 text-sm sm:text-base">Whether it's physical component repair or digital software troubleshooting, we have you covered.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Software Solutions -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandBlue/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Digital Software Solutions</h3>
+                        <p class="text-gray-400 text-sm mb-4">Fix boot loops, system crashes, app errors, OS flashing, carrier network unlocks, and cloud bypasses.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Firmware flashing & error fixes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Network & carrier unlocking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2: Micro-Soldering & Board Diagnostics -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandOrange/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandOrange/10 text-brandOrange flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Board-Level Micro Soldering</h3>
+                        <p class="text-gray-400 text-sm mb-4">Logic board diagnostics, power rail fault repairs, chip IC replacements, and trace restoration.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> IC & resistor replacement</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Complex circuit troubleshooting</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3: Screen & Display Repair -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandBlue/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Screen Replacement</h3>
+                        <p class="text-gray-400 text-sm mb-4">Premium OLED & LCD screen replacements for iPhone, Samsung Galaxy, Google Pixel, and tablets.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> OEM quality displays</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> 20-minute fast turnarounds</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4: Data Recovery -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandOrange/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandOrange/10 text-brandOrange flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Recovery & Backup</h3>
+                        <p class="text-gray-400 text-sm mb-4">Recover precious photos, contacts, and documents from dead, water-damaged, or unbootable devices.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Deep chip-level extraction</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Secure confidential handling</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 5: Battery & Power Port -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandBlue/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-battery-full"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Battery & Charging Ports</h3>
+                        <p class="text-gray-400 text-sm mb-4">Fix fast battery drains, swollen batteries, and broken USB-C or Lightning charging ports.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> High-capacity replacement batteries</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Port cleaning & replacements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 6: Smartphone Sales -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandOrange/50 rounded-2xl p-6 transition duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brandOrange/10 text-brandOrange flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">New & Pre-Owned Devices</h3>
+                        <p class="text-gray-400 text-sm mb-4">Explore our wide selection of certified smartphones, tablets, and mobile electronics accessories.</p>
+                        <ul class="text-xs text-gray-300 space-y-2 border-t border-darkBorder/60 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Certified unlocked devices</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Accessories & chargers available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Repair Cost Estimator -->
+        <section id="estimator" class="py-20 bg-slate-950 border-t border-darkBorder relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs uppercase font-bold tracking-widest text-brandOrange mb-2 block">Instant Estimate</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Service & Repair Estimator</h2>
+                    <p class="text-gray-400 mt-2 text-sm">Select your device and issue type below to get an estimated cost instantly.</p>
+                </div>
+
+                <div class="bg-darkCard border border-darkBorder rounded-3xl p-6 sm:p-10 shadow-2xl orange-glow">
+                    <form id="estimatorForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Device Category -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">1. Select Device</label>
+                                <select id="estDevice" onchange="updateEstimatorModels()" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:border-brandOrange text-sm">
+                                    <option value="iphone">iPhone</option>
+                                    <option value="samsung">Samsung Galaxy</option>
+                                    <option value="software">Digital Software Fix</option>
+                                    <option value="laptop">Laptop / MacBook</option>
+                                </select>
+                            </div>
+
+                            <!-- Model Select -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">2. Model / Category</label>
+                                <select id="estModel" onchange="calculateEstimate()" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:border-brandOrange text-sm">
+                                    <!-- Options updated dynamically via JS -->
+                                </select>
+                            </div>
+
+                            <!-- Issue Type -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">3. Issue Type</label>
+                                <select id="estIssue" onchange="calculateEstimate()" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-gray-200 focus:outline-none focus:border-brandOrange text-sm">
+                                    <option value="screen">Screen Replacement</option>
+                                    <option value="battery">Battery Replacement</option>
+                                    <option value="software">OS / Software Repair</option>
+                                    <option value="unlock">Network / Carrier Unlock</option>
+                                    <option value="board">Micro-Soldering / Board Repair</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Price Calculation Display -->
+                        <div class="bg-darkBg rounded-2xl p-6 border border-darkBorder flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Estimated Service Price</p>
+                                <p id="estPriceDisplay" class="text-3xl sm:text-4xl font-black text-brandOrange mt-1">$69 - $119</p>
+                                <p class="text-[11px] text-gray-500 mt-1">*Final quote provided after quick diagnostic at our Brooklyn store.</p>
+                            </div>
+                            <button type="button" onclick="bookWithEstimate()" class="w-full sm:w-auto bg-gradient-to-r from-brandOrange to-amber-600 text-white font-bold px-6 py-3.5 rounded-xl shadow hover:brightness-110 transition text-sm">
+                                Lock In Estimate & Book
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-darkBg border-t border-darkBorder">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs uppercase font-bold tracking-widest text-brandOrange mb-2 block">Common Questions</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full text-left px-6 py-4 flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+                            <span>What digital software solutions do you provide?</span>
+                            <i id="faqIcon-1" class="fa-solid fa-chevron-down text-brandOrange transition-transform"></i>
+                        </button>
+                        <div id="faqAnswer-1" class="hidden px-6 pb-4 text-sm text-gray-400 border-t border-darkBorder/40 pt-3">
+                            We offer remote and in-store digital software fixes including network carrier unlocking, bootloop and crash resolutions, software updates, app performance optimization, and deep data extraction/backup.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full text-left px-6 py-4 flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+                            <span>What is your exact store location?</span>
+                            <i id="faqIcon-2" class="fa-solid fa-chevron-down text-brandOrange transition-transform"></i>
+                        </button>
+                        <div id="faqAnswer-2" class="hidden px-6 pb-4 text-sm text-gray-400 border-t border-darkBorder/40 pt-3">
+                            Our physical retail shop is located at <strong>1058 Coney Island ave Brooklyn NY 11210</strong>. You are always welcome to walk in or schedule an appointment beforehand.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl overflow-hidden">
+                        <button onclick="toggleFaq(3)" class="w-full text-left px-6 py-4 flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+                            <span>How can I reach Fixpro Wireless on Instagram?</span>
+                            <i id="faqIcon-3" class="fa-solid fa-chevron-down text-brandOrange transition-transform"></i>
+                        </button>
+                        <div id="faqAnswer-3" class="hidden px-6 pb-4 text-sm text-gray-400 border-t border-darkBorder/40 pt-3">
+                            You can follow us and send us a direct message on Instagram at <a href="https://instagram.com/fixprowirelessllc" target="_blank" class="text-brandOrange underline">@fixprowirelessllc</a> for updates, quick troubleshooting help, or device inquiries!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="py-20 bg-slate-950 border-t border-darkBorder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Details Column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-widest text-brandOrange mb-2 block">Connect With Us</span>
+                            <h2 class="text-3xl font-extrabold text-white">Fixpro Wireless LLC</h2>
+                            <p class="text-gray-400 mt-2 text-sm">Reach out via Instagram, email, or visit our physical shop directly in Brooklyn.</p>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-darkCard border border-darkBorder">
+                                <div class="w-10 h-10 rounded-lg bg-brandOrange/10 text-brandOrange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Physical Store Address</h4>
+                                    <p class="text-gray-300 mt-0.5">1058 Coney Island ave</p>
+                                    <p class="text-gray-300">Brooklyn, NY 11210</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-darkCard border border-darkBorder">
+                                <div class="w-10 h-10 rounded-lg bg-brandOrange/10 text-brandOrange flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-instagram text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Instagram Account</h4>
+                                    <a href="https://instagram.com/fixprowirelessllc" target="_blank" rel="noopener noreferrer" class="text-brandOrange font-semibold hover:underline">
+                                        @fixprowirelessllc
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-darkCard border border-darkBorder">
+                                <div class="w-10 h-10 rounded-lg bg-brandBlue/10 text-brandBlue flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Official Email</h4>
+                                    <a href="mailto:Fixprowirelessllc@gmail.com" class="text-gray-300 hover:text-brandOrange transition">
+                                        Fixprowirelessllc@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-darkCard border border-darkBorder">
+                                <div class="w-10 h-10 rounded-lg bg-brandOrange/10 text-brandOrange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Phone Support</h4>
+                                    <a href="tel:10000000000" class="text-gray-300 hover:text-brandOrange transition">
+                                        (+1----------)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Map Box -->
+                    <div class="lg:col-span-7">
+                        <div class="h-full bg-darkCard border border-darkBorder rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-1">Visit Brooklyn Location</h3>
+                                <p class="text-xs text-gray-400">Conveniently located at 1058 Coney Island Ave.</p>
+                            </div>
+                            
+                            <!-- Google Map Frame -->
+                            <div class="w-full h-80 rounded-2xl overflow-hidden border border-darkBorder bg-slate-900 relative">
+                                <iframe 
+                                    class="w-full h-full filter contrast-125 opacity-90" 
+                                    src="https://maps.google.com/maps?q=1058%20Coney%20Island%20ave%20Brooklyn%20NY%2011210&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                    frameborder="0" 
+                                    scrolling="no" 
+                                    marginheight="0" 
+                                    marginwidth="0">
+                                </iframe>
+                            </div>
+
+                            <a href="https://maps.google.com/?q=1058+Coney+Island+ave+Brooklyn+NY+11210" target="_blank" class="w-full text-center bg-brandOrange hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition">
+                                Get Directions on Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darkBg border-t border-darkBorder py-12 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-darkBorder/60">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-brandOrange/20 border border-brandOrange flex items-center justify-center text-brandOrange">
+                        <i class="fa-solid fa-shield-halved text-sm"></i>
+                    </div>
+                    <span class="text-lg font-black text-white">FIXPRO WIRELESS LLC</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium">
+                    <a href="#services" class="hover:text-brandOrange transition">Services</a>
+                    <a href="#estimator" class="hover:text-brandOrange transition">Estimator</a>
+                    <a href="#why-us" class="hover:text-brandOrange transition">Why Fixpro</a>
+                    <a href="#faq" class="hover:text-brandOrange transition">FAQ</a>
+                    <a href="#contact" class="hover:text-brandOrange transition">Location</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://instagram.com/fixprowirelessllc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-brandOrange hover:border-brandOrange transition">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="mailto:Fixprowirelessllc@gmail.com" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-brandOrange hover:border-brandOrange transition">
+                        <i class="fa-solid fa-envelope text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; <span id="year"></span> Fixpro Wireless LLC. All rights reserved.</p>
+                <p>1058 Coney Island ave Brooklyn NY 11210 | Instagram: @fixprowirelessllc</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-darkCard border border-darkBorder w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl orange-glow max-h-[90vh] overflow-y-auto">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-2xl font-bold text-white mb-1">Schedule Service</h3>
+            <p class="text-xs text-gray-400 mb-6">Enter your details for repair or digital software service.</p>
+
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+                <div>
+                    <label class="block font-semibold text-gray-300 mb-1">Your Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandOrange">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-gray-300 mb-1">Phone Number</label>
+                        <input type="tel" required placeholder="(+1----------)" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandOrange">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-gray-300 mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandOrange">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-300 mb-1">Device Model & Issue / Software Request</label>
+                    <input type="text" id="modalDeviceInput" required placeholder="e.g. iPhone 14 Pro Max Screen / Network Unlock" class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandOrange">
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-300 mb-1">Additional Notes (Optional)</label>
+                    <textarea rows="3" placeholder="Describe symptoms or software requirements..." class="w-full bg-darkBg border border-darkBorder rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandOrange"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-gradient-to-r from-brandOrange to-amber-600 hover:from-amber-600 hover:to-brandOrange text-white font-bold py-3.5 rounded-xl transition text-base">
+                        Submit Appointment Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-brandOrange text-white px-5 py-3 rounded-xl shadow-lg font-bold text-xs sm:text-sm transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <script>
+        // Set current copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Estimator Data
+        const modelData = {
+            iphone: [
+                { name: 'iPhone 15 / 15 Pro Series', screen: '$149 - $279', battery: '$79 - $99', software: '$49 - $89', unlock: '$59 - $99', board: '$119 - $199' },
+                { name: 'iPhone 14 / 13 Series', screen: '$99 - $189', battery: '$59 - $79', software: '$39 - $69', unlock: '$49 - $79', board: '$99 - $149' },
+                { name: 'iPhone 12 / 11 / X Series', screen: '$69 - $129', battery: '$49 - $69', software: '$39 - $59', unlock: '$39 - $69', board: '$79 - $129' }
+            ],
+            samsung: [
+                { name: 'Galaxy S24 / S23 Series', screen: '$179 - $289', battery: '$79 - $99', software: '$49 - $89', unlock: '$59 - $89', board: '$119 - $189' },
+                { name: 'Galaxy S22 / S21 / Note', screen: '$119 - $189', battery: '$59 - $79', software: '$39 - $69', unlock: '$49 - $79', board: '$89 - $139' }
+            ],
+            software: [
+                { name: 'Software Unlocking & Bypass', screen: 'N/A', battery: 'N/A', software: '$49 - $89', unlock: '$39 - $79', board: 'N/A' },
+                { name: 'Boot Loop & OS Re-flash', screen: 'N/A', battery: 'N/A', software: '$45 - $75', unlock: 'N/A', board: 'N/A' }
+            ],
+            laptop: [
+                { name: 'MacBook Pro / Air', screen: '$199 - $389', battery: '$119 - $159', software: '$59 - $99', unlock: '$69 - $119', board: '$149 - $249' },
+                { name: 'Windows Laptops', screen: '$99 - $189', battery: '$69 - $109', software: '$49 - $89', unlock: '$49 - $79', board: '$99 - $169' }
+            ]
+        };
+
+        function updateEstimatorModels() {
+            const devSelect = document.getElementById('estDevice').value;
+            const modelSelect = document.getElementById('estModel');
+            modelSelect.innerHTML = '';
+
+            modelData[devSelect].forEach((item, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.textContent = item.name;
+                modelSelect.appendChild(opt);
+            });
+
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const devSelect = document.getElementById('estDevice').value;
+            const modelIdx = document.getElementById('estModel').value || 0;
+            const issueSelect = document.getElementById('estIssue').value;
+            
+            const selectedModelObj = modelData[devSelect][modelIdx];
+            if (selectedModelObj) {
+                const price = selectedModelObj[issueSelect] || '$49 - $99';
+                document.getElementById('estPriceDisplay').textContent = price;
+            }
+        }
+
+        updateEstimatorModels();
+
+        // Modal Helpers
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function bookWithEstimate() {
+            const devSelect = document.getElementById('estDevice');
+            const devText = devSelect.options[devSelect.selectedIndex].text;
+            const modelSelect = document.getElementById('estModel');
+            const modelText = modelSelect.options[modelSelect.selectedIndex]?.text || '';
+            const issueSelect = document.getElementById('estIssue');
+            const issueText = issueSelect.options[issueSelect.selectedIndex].text;
+
+            document.getElementById('modalDeviceInput').value = `${devText} ${modelText} - ${issueText}`;
+            openBookingModal();
+        }
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            closeBookingModal();
+            showToast('Request received! We will contact you shortly.');
+            event.target.reset();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Accordion FAQ Toggle
+        function toggleFaq(index) {
+            const answer = document.getElementById(`faqAnswer-${index}`);
+            const icon = document.getElementById(`faqIcon-${index}`);
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
